@@ -16,5 +16,4 @@ class Command(BaseCommand):
             next(phone_reader)
 
             for line in phone_reader:
-                # TODO: Добавьте сохранение модели
-                pass
+                Phone.objects.create(name=phone['name'], price=phone['price'], image=phone['image'], release_date=phone['release_date'], lte_exists=phone['lte_exists'], slug_t = slugify(phone['name']))
